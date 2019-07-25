@@ -1,0 +1,19 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<div *ngIf="things.car; else noCar; let car">
+  Nice <b>{{ car }}!</b>
+</div>
+<ng-template #noCar>
+  Call a Uber.
+</ng-template>
+
+<div *ngIf="things$ | async; else loading; let things">
+  Nice <pre>{{ things.watch }}! </pre><!-- Nice Timex! -->
+</div>
+<ng-template #loading>
+  Loading your things...
+</ng-template>
+
